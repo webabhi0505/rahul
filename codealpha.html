@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+    /* font-family: 'Roboto', sans-serif;*/
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        
+        
+        cursor: pointer;
+
+    }
+    body
+    {
+        background-image: url(./celsius-shutterstock.jpg);
+        
+        background-repeat:contain;
+        background-size:100%; 
+    }
+    
+
+    .calculater {
+        display: flex;
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 10%;
+
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cal {
+        margin: 10px;
+       
+        border-radius: 5px;
+        
+      
+
+    }
+    .cal h2
+    {
+color: aqua;
+padding: 10px 5px;
+
+    }
+    button
+    {
+        padding: 8px 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        border: none;
+        background-color: green;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .cal label
+    {
+        color: rgb(250, 58, 58);
+        font-weight: 700;
+        
+    }
+    .cal input
+    {
+        height: 20px;
+    }
+
+    .cal label:nth-child(2) {
+        margin-top: 20px;
+    }
+
+    .bottom {
+
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        width: 80%;
+        margin-left: 10%;
+
+    }
+
+    .left {
+
+        border: 2px solid black;
+        background-image: linear-gradient(to top, #16ebc1d5, #229f1ecc);
+        border-radius: 10px;
+
+    }
+    .left,.mid,.right
+    {
+        width: 300px;
+        text-align: center;
+        letter-spacing: 0.1px;
+        border-radius: 10px;
+
+        border: 2px solid black;
+        background-image: linear-gradient(to top, #16ebc1d5, #229f1ecc);
+    }
+
+    .right:hover {
+        transform: rotate(20deg);
+        transition-duration:1s;
+        height: 300px;
+        width: 300px;
+    }
+    .mid:hover {
+        transform: rotate(20deg);
+        transition-duration:1s;
+    }
+
+    .left:hover {
+        transform: rotate(20deg);
+        transition-duration:1s;
+    }
+label
+{
+ margin: 10px;
+}
+    
+</style>
+
+<body>
+    <div class="calculater">
+        <div class="cal">
+            <h2>Welcome to temperature converter </h2>
+            <label for="celsius">Celsius </label>
+            <br>
+            <input type="number" name="" id="celsius" placeholder="Enter the celsius value">
+            <br>
+            <label for="Fahrenheit">Fahrenheit</label>
+            <br>
+            <input type="number" name="Fahrenheit" id="Fahrenheit"  placeholder="Enter the fahrenheit value">
+            <br>
+            <button id="convert">CHANGE</button>
+        </div>
+    </div>
+    <div class="bottom">
+
+        <div class="left">
+            <h3> What is Celsius?</h3>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt harum laborum, cum adipisci quos
+                recusandae omnis maiores? Non neque, numquam ullam qui blanditiis ab magni fuga sequi dolorem dolorum,
+                animi ipsa quisquam? Aliquam iure soluta nostrum blanditiis ducimus impedit doloribus. Suscipit dolor ex
+                accusantium commodi quasi obcaecati recusandae? Provident, sed.</p>
+        </div>
+        <div class="mid">
+            <h3> What is Fahrenheit?</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat in suscipit ex eos neque! Repellat
+                dignissimos voluptate in repellendus eos temporibus, asperiores accusantium repudiandae accusamus omnis
+                aut officia eligendi illo fugiat laboriosam optio aliquam maxime molestiae quasi consectetur recusandae
+                vitae rem nemo. Unde, ducimus! Pariatur rem libero error laborum nulla?</p>
+        </div>
+        <div class="right">
+            <h3>What is Kelvin?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea natus, cum sit impedit illo placeat ipsam
+                deleniti ipsa sequi, provident rerum at autem architecto id animi laborum! Voluptatem consectetur enim
+                natus, praesentium laudantium, ipsa totam dolores corporis aperiam nam iusto, nesciunt blanditiis
+                voluptas. Reprehenderit, laborum ipsa obcaecati ut pariatur tempore!</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const celsiusInput = document.getElementById("celsius");
+            const fahrenheitInput = document.getElementById("Fahrenheit");
+            const convertButton = document.getElementById("convert");
+
+            convertButton.addEventListener("click", function() {
+                const celsiusValue = parseFloat(celsiusInput.value);
+                const fahrenheitValue = parseFloat(fahrenheitInput.value);
+
+                if (!isNaN(celsiusValue)) {
+                    // Convert Celsius to Fahrenheit
+                    const fahrenheitResult = (celsiusValue * 9/5) + 32;
+                    fahrenheitInput.value = fahrenheitResult.toFixed(2);
+                }
+
+                if (!isNaN(fahrenheitValue)) {
+                    // Convert Fahrenheit to Celsius
+                    const celsiusResult = (fahrenheitValue - 32) * 5/9;
+                    celsiusInput.value = celsiusResult.toFixed(2);
+                }
+            });
+        });
+     </script>
+    </body>
+
+</html>
